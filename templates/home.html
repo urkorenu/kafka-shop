@@ -1,0 +1,32 @@
+{% extends "template.html" %}
+
+{% block body_content %}
+<div>
+    <form method="POST" action="{{ url_for('home_page') }}">
+        <label for="fruit">Select a fruit:</label>
+        <select name="fruit" id="fruit">
+            {% for fruit in prod_list %}
+            <option value="{{ fruit }}">{{ fruit }}</option>
+            {% endfor %}
+        </select>
+
+        <br><br>
+
+        <button type="submit" name="kind" value="buy">Buy Fruit</button>
+        <button type="submit" name="kind" value="list">View History</button>
+    </form>
+
+    {% if results %}
+    <div class="results-section">
+        <h2>Sales History:</h2>
+        <ul>
+            {% for sale in results %}
+            <li>{{ sale }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</div>
+
+
+{% endblock %}

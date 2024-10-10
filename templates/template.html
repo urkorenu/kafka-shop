@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="utf-8">
+<head>
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Or's Fruit Shop</title>
+    {% endif %}
+</head>
+
+<body style="background-color:pink;">
+<h1>Or's Fruit Shop</h1>
+    {% block body_content %}
+    {% endblock %}
+</body>
+
+</html>
